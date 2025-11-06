@@ -1,0 +1,6 @@
+{
+  "num_attempts": 10000,
+  "successful_attacks": 0,
+  "attack_success_rate": 0.0,
+  "security_level": 1.0
+}

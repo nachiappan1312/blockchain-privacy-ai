@@ -1,0 +1,137 @@
+# AIBPB Experiment Configuration
+
+# Dataset Configuration
+datasets:
+  # Dataset sizes to evaluate
+  sizes: [1000, 5000, 10000, 50000, 100000]
+  
+  # Healthcare dataset parameters
+  healthcare:
+    num_patients: 10000
+    age_range: [18, 90]
+    diagnosis_codes: 500
+    
+  # Financial dataset parameters  
+  financial:
+    num_transactions: 50000
+    amount_range: [1, 1000000]
+    risk_categories: 5
+    
+  # Federated learning dataset parameters
+  federated_learning:
+    num_clients: 100
+    dataset: "MNIST"
+    epochs: 10
+
+# Privacy Configuration
+privacy:
+  # Differential privacy epsilon values
+  epsilon_values: [0.1, 0.5, 1.0, 2.0, 4.0]
+  
+  # K-anonymity targets
+  k_values: [10, 50, 100, 500, 1000]
+  
+  # ZKP circuit sizes (number of constraints)
+  circuit_sizes: [1024, 4096, 16384, 65536, 262144]
+
+# Optimization Configuration
+optimization:
+  # Cost-privacy preference weights (alpha values)
+  alpha_values: [0.0, 0.25, 0.5, 0.75, 1.0]
+  
+  # Optimization algorithms
+  algorithms:
+    - "simulated_annealing"
+    - "genetic_algorithm"
+    - "bayesian_optimization"
+  
+  # Maximum optimization iterations
+  max_iterations: 1000
+  
+# Blockchain Configuration
+blockchain:
+  # Gas price in gwei
+  gas_price: 50
+  
+  # Block gas limit
+  gas_limit: 30000000
+  
+  # Network types
+  networks:
+    - "local"
+    - "testnet"
+
+# Simulation Configuration
+simulation:
+  # Number of trials per configuration
+  num_trials: 50
+  
+  # Random seed for reproducibility
+  random_seed: 42
+  
+  # Enable parallel execution
+  parallel: true
+  
+  # Number of parallel workers
+  num_workers: 4
+  
+  # Verbose output
+  verbose: true
+
+# Evaluation Metrics
+metrics:
+  performance:
+    - "proof_generation_time"
+    - "verification_time"
+    - "gas_consumption"
+    - "proof_size"
+    - "throughput"
+    
+  privacy:
+    - "mutual_information"
+    - "k_anonymity"
+    - "l_diversity"
+    - "differential_privacy_epsilon"
+    - "re_identification_risk"
+    
+  compliance:
+    - "policy_satisfaction_rate"
+    - "completeness_score"
+    - "explainability_score"
+
+# Baseline Comparisons
+baselines:
+  - name: "naive_onchain"
+    description: "Complete data on-chain, no privacy"
+    
+  - name: "zkp_only"
+    description: "Zero-knowledge proofs only"
+    
+  - name: "abe_only"
+    description: "Attribute-based encryption only"
+    
+  - name: "dp_only"
+    description: "Differential privacy only"
+    
+  - name: "manual_orchestration"
+    description: "Manual proof composition"
+
+# Output Configuration
+output:
+  # Results directory
+  results_dir: "results"
+  
+  # Figures directory
+  figures_dir: "figures"
+  
+  # Figure format (pdf, png, svg)
+  figure_format: "png"
+  
+  # Figure DPI for raster formats
+  figure_dpi: 300
+  
+  # Save intermediate results
+  save_intermediate: true
+  
+  # Compression for large files
+  compress_results: true

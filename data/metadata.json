@@ -1,0 +1,18 @@
+{
+  "generated_at": "2025-11-06T00:59:51.002512",
+  "random_seed": 42,
+  "datasets": {
+    "healthcare": {
+      "records": 10000,
+      "file": "healthcare.csv"
+    },
+    "financial": {
+      "records": 50000,
+      "file": "financial.csv"
+    },
+    "federated_learning": {
+      "clients": 100,
+      "file": "federated_learning.json"
+    }
+  }
+}
