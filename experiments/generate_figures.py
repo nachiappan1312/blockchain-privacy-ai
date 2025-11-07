@@ -25,12 +25,12 @@ sns.set_palette("husl")
 plt.rcParams['figure.dpi'] = 150
 plt.rcParams['savefig.dpi'] = 300
 plt.rcParams['font.family'] = 'sans-serif'
-plt.rcParams['font.size'] = 14
-plt.rcParams['axes.labelsize'] = 16
-plt.rcParams['axes.titlesize'] = 18
-plt.rcParams['xtick.labelsize'] = 13
-plt.rcParams['ytick.labelsize'] = 13
-plt.rcParams['legend.fontsize'] = 13
+plt.rcParams['font.size'] = 16
+plt.rcParams['axes.labelsize'] = 18
+plt.rcParams['axes.titlesize'] = 20
+plt.rcParams['xtick.labelsize'] = 15
+plt.rcParams['ytick.labelsize'] = 15
+plt.rcParams['legend.fontsize'] = 16
 plt.rcParams['legend.framealpha'] = 0.9
 plt.rcParams['legend.edgecolor'] = 'black'
 plt.rcParams['legend.fancybox'] = False
@@ -120,7 +120,7 @@ class FigureGenerator:
         # Add value labels on bars
         for i, (bar, val) in enumerate(zip(bars, gas_values)):
             ax.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 15,
-                   f'{val:.0f}K', ha='center', va='bottom', fontsize=12, fontweight='bold')
+                   f'{val:.0f}K', ha='center', va='bottom', fontsize=14, fontweight='bold')
 
         plt.tight_layout()
         plt.savefig(self.figures_dir / f'gas_consumption.{self.format}',
@@ -253,7 +253,7 @@ class FigureGenerator:
         # Add value labels
         for bar, score in zip(bars, scores):
             ax.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 0.5,
-                   f'{score:.1f}%', ha='center', va='bottom', fontsize=13,
+                   f'{score:.1f}%', ha='center', va='bottom', fontsize=15,
                    fontweight='bold')
 
         plt.tight_layout()
@@ -300,14 +300,14 @@ class FigureGenerator:
 
         ax.set_xlabel('Gas Cost (K gas)', fontweight='bold')
         ax.set_ylabel('Privacy Risk (normalized)', fontweight='bold')
-        ax.legend(loc='best', frameon=True, fontsize=12)
+        ax.legend(loc='best', frameon=True, fontsize=16)
         ax.grid(True, alpha=0.3, linestyle='--', linewidth=0.7)
 
         # Add colorbar
         cbar = plt.colorbar(scatter, ax=ax, pad=0.02)
         cbar.set_label('Preference Weight (α)', rotation=270, labelpad=25,
-                      fontsize=14, fontweight='bold')
-        cbar.ax.tick_params(labelsize=12)
+                      fontsize=16, fontweight='bold')
+        cbar.ax.tick_params(labelsize=14)
 
         plt.tight_layout()
         plt.savefig(self.figures_dir / f'cost_privacy_tradeoff.{self.format}',
@@ -374,7 +374,7 @@ class FigureGenerator:
         # Add values on bars
         for bar, val in zip(bars, throughputs):
             ax.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 10,
-                    f'{val:.0f}', ha='center', va='bottom', fontsize=13,
+                    f'{val:.0f}', ha='center', va='bottom', fontsize=15,
                     fontweight='bold')
 
         plt.tight_layout()
@@ -409,7 +409,7 @@ class FigureGenerator:
         # Add value labels
         for bar, val in zip(bars, times):
             ax.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 0.2,
-                   f'{val:.2f}s', ha='center', va='bottom', fontsize=12,
+                   f'{val:.2f}s', ha='center', va='bottom', fontsize=14,
                    fontweight='bold')
 
         plt.tight_layout()
